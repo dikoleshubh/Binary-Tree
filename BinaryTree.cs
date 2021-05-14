@@ -48,6 +48,30 @@ namespace BInaryTree
         {
             Console.WriteLine("\nSize " + (1 + LeftCount + RightCount));
         }
+
+        public bool Search(T element, BST<T> node) // Parametrized Constructor
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.NodeData.Equals(element))
+            {
+               
+                result = true;
+            }
+
+            else if (node.NodeData.CompareTo(element) < 0)
+            {
+                Search(element, node.RightTree);
+                //The right subtree of a node contains only nodes with keys greater than the node’s key.
+            }
+            else
+            {  //The left subtree of a node contains only nodes with keys lesser than the node’s key.
+                Search(element, node.LeftTree);
+            }
+            return result;
+        }
         public void Display()
         {
             if (LeftTree != null)
