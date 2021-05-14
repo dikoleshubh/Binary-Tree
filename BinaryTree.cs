@@ -44,7 +44,10 @@ namespace BInaryTree
                     RightTree.Insert(item);
             }
         }
-
+        public void GetSize() //Countint the size
+        {
+            Console.WriteLine("\nSize " + (1 + LeftCount + RightCount));
+        }
         public void Display()
         {
             if (LeftTree != null)
